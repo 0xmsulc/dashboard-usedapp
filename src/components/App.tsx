@@ -1,11 +1,13 @@
-import { FC } from 'react'
+import { FC } from 'react';
+import ethereumLogo from '../assets/images/ethereumLogo.png';
+import '../styles/App.css';
 
-import ethereumLogo from './assets/images/ethereumLogo.png'
-import './App.css'
+import GasPrice from './GasPrice';
 
 const App: FC = () => {
   return (
     <div className="App">
+      <GasPrice />
       <header className="App-header">
         <img src={ethereumLogo} className="App-logo" alt="logo" />
         <p>
@@ -21,7 +23,7 @@ const App: FC = () => {
         </a>
       </header>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
