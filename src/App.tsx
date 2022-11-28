@@ -1,13 +1,13 @@
-import { FC } from 'react';
+import { FC } from 'react'
 
-import logo from './assets/images/logo.svg';
-import './App.css';
+import ethereumLogo from './assets/images/ethereumLogo.png'
+import './App.css'
 
 const App: FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={ethereumLogo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -21,7 +21,7 @@ const App: FC = () => {
         </a>
       </header>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
