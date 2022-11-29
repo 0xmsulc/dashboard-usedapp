@@ -6,7 +6,7 @@ const theme = createTheme({
       main: '#FFF4D4',
     },
     secondary: {
-      main: '#757575',
+      main: '#61dafb',
     },
     error: {
       main: '#F87171',
@@ -16,8 +16,9 @@ const theme = createTheme({
     MuiTypography: {
       styleOverrides: {
         root: {
-          textAlign: 'right',
+          textAlign: 'center',
           margin: '8px',
+          variant: 'body2',
         },
       },
     },

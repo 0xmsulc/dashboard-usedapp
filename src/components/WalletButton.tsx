@@ -11,10 +11,12 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-const WalletButton: FC<{
+type Props = {
   chainId: number | undefined;
   isChainSupported: boolean;
-}> = ({ chainId, isChainSupported }) => {
+};
+
+const WalletButton: FC<Props> = ({ chainId, isChainSupported }) => {
   const [rendered, setRendered] = useState('');
   const { account, activateBrowserWallet, deactivate, error } = useEthers();
   const { ens } = useLookupAddress(account);

@@ -2,6 +2,9 @@ import { FC } from 'react';
 import { useGasPrice } from '@usedapp/core';
 import { utils } from 'ethers';
 
+import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
+
 const GasPrice: FC = () => {
   const etherGasPrice = useGasPrice();
   const gweiGasPrice =
@@ -10,8 +13,8 @@ const GasPrice: FC = () => {
 
   return (
     <>
-      <p>Gas price = {gweiGasPrice} Gwei</p>
-      <br />
+      <Typography>Gas price = {gweiGasPrice} Gwei</Typography>
+      <Divider />
     </>
   );
 };

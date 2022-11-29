@@ -12,9 +12,11 @@ import TextField from '@mui/material/TextField';
 const isValidEns = (value: string): boolean =>
   typeof value === 'string' && value.endsWith('.eth');
 
-const SearchBar: FC<{ setInputAccount: (account: string) => void }> = ({
-  setInputAccount,
-}) => {
+type Props = {
+  setInputAccount: (account: string) => void;
+};
+
+const SearchBar: FC<Props> = ({ setInputAccount }) => {
   //   const { account } = useEthers();
   const [value, setValue] = useState('');
   //   const [disabled, setDisabled] = useState(!!account);
