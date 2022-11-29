@@ -68,6 +68,7 @@ const WalletButton: FC<Props> = ({ chainId, isChainSupported }) => {
             deactivate();
           }
         }}
+        variant="contained"
       >
         {!rendered && 'Connect Wallet'}
         {!!rendered && rendered}
