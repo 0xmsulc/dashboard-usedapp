@@ -1,5 +1,4 @@
-import { FC, useEffect, useState } from 'react';
-import { useEthers } from '@usedapp/core';
+import { FC, useState } from 'react';
 import { utils } from 'ethers';
 
 import Box from '@mui/material/Box';
@@ -7,7 +6,6 @@ import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
-import TextField from '@mui/material/TextField';
 
 const isValidEns = (value: string): boolean =>
   typeof value === 'string' && value.endsWith('.eth');
@@ -17,9 +15,7 @@ type Props = {
 };
 
 const SearchBar: FC<Props> = ({ setInputAccount }) => {
-  //   const { account } = useEthers();
   const [value, setValue] = useState('');
-  //   const [disabled, setDisabled] = useState(!!account);
   const [error, setError] = useState(false);
 
   const { isAddress } = utils;
@@ -42,21 +38,13 @@ const SearchBar: FC<Props> = ({ setInputAccount }) => {
     }
   };
 
-  //   useEffect(() => {
-  //     if (account) {
-  //       setDisabled(true);
-  //     } else {
-  //       setDisabled(false);
-  //     }
-  //   }, [account]);
-
   return (
     <Box
       sx={{
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        mt: 2,
+        mt: 3,
       }}
     >
       <Paper

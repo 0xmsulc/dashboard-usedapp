@@ -74,14 +74,14 @@ const Blocks: FC = () => {
             }}
           >
             {blocks.map((block, index) => {
-              const labelId = `list-label-${block}`;
+              const labelId = `list-label-${block}-${index}`;
               return (
                 !!block &&
                 index !== 0 &&
                 index < 6 && (
                   <>
                     <ListItem
-                      key={block}
+                      key={labelId}
                       secondaryAction={
                         <Link
                           color="secondary"

@@ -1,13 +1,23 @@
 import { FC } from 'react';
+import { EtherscanProvider } from '@ethersproject/providers';
+import { useEthers } from '@usedapp/core';
 
 import GasPrice from './GasPrice';
 import Curve from './Curve';
 import Blocks from './Blocks';
+import Transactions from './Transactions';
 
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
-const Body: FC = () => {
+type Props = {
+  inputAccount?: string;
+  etherscan: EtherscanProvider;
+};
+
+const Body: FC<Props> = ({ inputAccount, etherscan }) => {
+  const { account } = useEthers();
+
   return (
     <Box
       sx={{
@@ -24,10 +34,12 @@ const Body: FC = () => {
         <Blocks />
       </Box>
       <Box sx={{ flex: '1 100%', textAlign: 'center' }}>
-        <p>Create React App example 2</p>
+        <Typography variant="h6"></Typography>
+        <Transactions account={inputAccount} etherscan={etherscan} />
       </Box>
       <Box sx={{ flex: '1 100%', textAlign: 'center' }}>
-        <p>Create React App example 2</p>
+        <Typography variant="h6"></Typography>
+        <Transactions account={account} etherscan={etherscan} isOwn />
       </Box>
     </Box>
   );

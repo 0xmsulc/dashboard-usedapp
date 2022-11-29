@@ -11,22 +11,20 @@ import Container from '@mui/material/Container';
 
 type Props = {
   readOnlyUrls: NodeUrls | undefined;
-  etherscanProvider: EtherscanProvider;
+  etherscan: EtherscanProvider;
 };
 
-const App: FC<Props> = ({ etherscanProvider, readOnlyUrls }) => {
-  const { account, chainId } = useEthers();
+const App: FC<Props> = ({ etherscan, readOnlyUrls }) => {
+  const { chainId } = useEthers();
   const [inputAccount, setInputAccount] = useState('');
   const isChainSupported =
     !!chainId && !!readOnlyUrls && !!readOnlyUrls[chainId];
-
-  console.log(inputAccount);
 
   return (
     <Container disableGutters={true}>
       <Header chainId={chainId} isChainSupported={isChainSupported} />
       <SearchBar setInputAccount={setInputAccount} />
-      <Body />
+      <Body inputAccount={inputAccount} etherscan={etherscan} />
     </Container>
   );
 };

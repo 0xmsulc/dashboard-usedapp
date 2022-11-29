@@ -16,7 +16,7 @@ const config: Config = {
   },
 };
 
-const etherscanProvider: EtherscanProvider = new providers.EtherscanProvider(
+const etherscan: EtherscanProvider = new providers.EtherscanProvider(
   1,
   process.env.REACT_APP_ETHERSCAN_API_KEY
 );
@@ -27,10 +27,7 @@ const root = createRoot(container!);
 root.render(
   <ThemeProvider theme={theme}>
     <DAppProvider config={config}>
-      <App
-        readOnlyUrls={config.readOnlyUrls}
-        etherscanProvider={etherscanProvider}
-      />
+      <App readOnlyUrls={config.readOnlyUrls} etherscan={etherscan} />
     </DAppProvider>
   </ThemeProvider>
 );
