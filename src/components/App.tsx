@@ -1,11 +1,10 @@
-import { FC } from 'react';
-// import ethereumLogo from '../assets/images/ethereumLogo.png';
+import { FC, useState } from 'react';
 
 import { NodeUrls, useEthers } from '@usedapp/core';
 import { EtherscanProvider } from '@ethersproject/providers';
-import logo from '../assets/images/ethLogo.png';
+import ethereumLogo from '../assets/images/ethLogo.png';
 import GasPrice from './GasPrice';
-
+import SearchBar from './SearchBar';
 import Avatar from '@mui/material/Avatar';
 
 import Container from '@mui/material/Container';
@@ -29,7 +28,7 @@ type Props = {
 
 const App: FC<Props> = ({ etherscanProvider, readOnlyUrls }) => {
   const { account, chainId } = useEthers();
-  // const [inputAccount, setInputAccount] = useState('');
+  const [inputAccount, setInputAccount] = useState('');
   const isChainSupported =
     !!chainId && !!readOnlyUrls && !!readOnlyUrls[chainId];
 
@@ -47,7 +46,7 @@ const App: FC<Props> = ({ etherscanProvider, readOnlyUrls }) => {
               aria-label="menu"
               sx={{ mr: 2 }}
             >
-              <Avatar alt="Ethereum" src={logo}></Avatar>
+              <Avatar alt="Ethereum" src={ethereumLogo}></Avatar>
             </IconButton>
             <Typography variant="inherit" component="div" sx={{ flexGrow: 1 }}>
               News
@@ -56,38 +55,14 @@ const App: FC<Props> = ({ etherscanProvider, readOnlyUrls }) => {
           </Toolbar>
         </AppBar>
       </Box>
-      <Box
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        <Paper
-          component="form"
-          sx={{
-            p: '2px 4px',
-            display: 'flex',
-            alignItems: 'center',
-            width: 400,
-          }}
-        >
-          <InputBase
-            sx={{ ml: 1, flex: 1 }}
-            placeholder="Please enter a valid eth address or ENS"
-            inputProps={{ 'aria-label': 'search google maps' }}
-          />
-          <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
-            <SearchIcon />
-          </IconButton>
-        </Paper>
-      </Box>
+      <SearchBar setInputAccount={setInputAccount} />
       <Box
         sx={{
           display: 'flex',
           height: '100%',
           minHeight: '100vh',
           flexFlow: 'row',
+          mt: 1,
         }}
       >
         <Box sx={{ flex: '1 100%', textAlign: 'center' }}>
