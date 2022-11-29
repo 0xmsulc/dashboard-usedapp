@@ -49,11 +49,6 @@ const Curve: FC = () => {
           <OpenInNewIcon />
         </Link>
       </Box>
-      {/* <span>
-          <Link href="https://curve.fi/#/ethereum/pools/steth/swap">
-            <OpenInNewIcon />
-          </Link>
-        </span>{' '} */}
       <Divider />
     </>
   );
