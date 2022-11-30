@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useState, FormEvent } from 'react';
 import { utils } from 'ethers';
 
 import Box from '@mui/material/Box';
@@ -19,6 +19,10 @@ const SearchBar: FC<Props> = ({ setInputAccount }) => {
   const [error, setError] = useState(false);
 
   const { isAddress } = utils;
+
+  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
@@ -55,6 +59,7 @@ const SearchBar: FC<Props> = ({ setInputAccount }) => {
           alignItems: 'center',
           width: 400,
         }}
+        onSubmit={onSubmit}
       >
         <InputBase
           sx={{
