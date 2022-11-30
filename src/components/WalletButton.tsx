@@ -23,7 +23,7 @@ const WalletButton: FC<Props> = ({ chainId, isChainSupported }) => {
   const balance = useEtherBalance(account);
 
   useEffect(() => {
-    if (ens) {
+    if (account && ens) {
       setRendered(ens);
     } else if (account) {
       setRendered(shortenAddress(account));
@@ -49,7 +49,7 @@ const WalletButton: FC<Props> = ({ chainId, isChainSupported }) => {
           </Typography>
         )
       )}
-      {!!chainId && !!account && (
+      {!!chainId && !!account && isChainSupported && (
         <Typography sx={{ flexGrow: 1, mr: 2 }}>Chain id: {chainId}</Typography>
       )}
       {!!error && (
