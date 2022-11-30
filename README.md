@@ -1,23 +1,19 @@
-# Getting Started with Create React App
+## Dashboard-usedapp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Basic dashboard where users can see some Ethereum blockchain stats and do simple things like connect their wallet to check their latest transactions.
 
-## Available Scripts
+### Technologies used:
 
-In the project directory, you can run:
+- **React** using [Create React App](https://github.com/facebook/create-react-app)
+- [useDapp](https://github.com/TrueFiEng/useDApp) framework for interacting with the blockchain
+- [MUI](https://mui.com/) for design and styling
+- [surge](https://surge.sh/) to deploy and publish the app
 
-### `npm start`
+### Available scripts:
 
-Runs the app in the development mode.\
+In the project directory, you can run `npm start` to run the app in development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Run `npm run build` to build the app for production.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To view the app in production mode, click [here](https://dashboard-usedapp.surge.sh/)
