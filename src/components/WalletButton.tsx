@@ -39,23 +39,21 @@ const WalletButton: FC<Props> = ({ chainId, isChainSupported }) => {
       }}
     >
       {!isChainSupported && !!account ? (
-        <Typography sx={{ flexGrow: 1 }} variant="body2">
+        <Typography sx={{ flexGrow: 1, mr: 2 }}>
           Please connect to ethereum Mainnet.
         </Typography>
       ) : (
         !!balance && (
-          <Typography sx={{ flexGrow: 1 }} variant="body2">
-            ETH balance: ${parseFloat(formatEther(balance)).toFixed(4)}
+          <Typography sx={{ flexGrow: 1 }}>
+            ETH balance: {parseFloat(formatEther(balance)).toFixed(4)}
           </Typography>
         )
       )}
       {!!chainId && !!account && (
-        <Typography sx={{ flexGrow: 1 }} variant="body2">
-          Chain id: {chainId}
-        </Typography>
+        <Typography sx={{ flexGrow: 1, mr: 2 }}>Chain id: {chainId}</Typography>
       )}
       {!!error && (
-        <Typography sx={{ flexGrow: 1 }} variant="body2">
+        <Typography sx={{ flexGrow: 1 }}>
           Error while connecting wallet: {error.message}
         </Typography>
       )}
