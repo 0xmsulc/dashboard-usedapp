@@ -24,6 +24,7 @@ const Blocks: FC = () => {
         setBlocks([blockNumber, ...blocks]);
       }
     }
+    // eslint-disable-next-line
   }, [blockNumber]);
 
   return (
